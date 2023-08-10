@@ -1,0 +1,3 @@
+# Data Compression
+### this is a hobby project where i impelement the basic ideas and algorithm in the field of data compression
+### this is mostly a way for me to learn this stuff so feel free to fix any mistakes or provide any optimization to the code...
