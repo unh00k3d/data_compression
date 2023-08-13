@@ -135,7 +135,7 @@ def main():
 
     # create an encoding alphabet dictionary
     encoding_alphabet = create_encoding(tree,encoded_so_far = '')
-    print(encoding_alphabet)
+    return encoding_alphabet
     
     
 
