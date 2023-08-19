@@ -13,12 +13,14 @@ def look_for_match(search_buffer,lookahead):
     # this is needed because in some cases lzss and lz77 allow for the offset to smaller than the run and encoding still works because
     # we are contantly updating the search buffer which in return becomes longer and provided a new reference
 
-    # check for characters in the search buffer
+# check for characters in the search buffer
     while i < len(search_buffer):
         # if there is a match between a character in the search buffer and the first character in the lookahead
         # then we want to start a run looking if the next character of each matches
         if search_buffer[i] == lookahead[0]:
+            # set the offset
             offset = len(search_buffer) - i
+            # 
             j = i
             while (j < len(search_buffer)) and (j - i < len(lookahead)):
                 if search_buffer[j] == lookahead[j-i]:
@@ -27,10 +29,17 @@ def look_for_match(search_buffer,lookahead):
                     j+=1
                 else:
                     break
+            
 
-                # if a match was found then stop looking for other matches and return that
+        # this is the main difference between lz77 and lzss
+        # lzss does not allow for run_length less than 3 because it is not efficient
 
-        if run_length > 0:
+        # if a match was found then stop looking for other matches and return that
+        if run_length > 2:
+            break
+        else:
+            run_length=0
+            offset=0
             break
 
         i+=1
@@ -38,9 +47,9 @@ def look_for_match(search_buffer,lookahead):
     return run_length,offset
                 
     
-def lz77_encoder(message,search_buffer_length,lookahead_length):
+def lzss_encoder(message,search_buffer_length,lookahead_length):
     """
-    an lz77 encoder
+    an lzss encoder
     """
 
     cursor = 0
@@ -68,26 +77,19 @@ def lz77_encoder(message,search_buffer_length,lookahead_length):
 
         # ordering of the cursor and output matters
         if run_length > 0:
-            cursor += run_length +1
+            output = (1,-offset,run_length)
+            cursor += run_length
         else:
+            output = (0,message[cursor])
             cursor += 1
 
-
-        if cursor >= len(message):
-            output = (run_length,offset,message[-1])
-            print(output)
-            break
-        output = (run_length,offset,message[cursor - 1 ])
         print(output)
 
-
-
 def main():
-
     message = input("Enter a message: ")
     search_buffer=  int(input("Buffer: "))
     lookahead = int(input("Lookahead: "))
-    lz77_encoder(message, search_buffer, lookahead)
+    lzss_encoder(message, search_buffer, lookahead)
 
 
 if __name__ == "__main__":
