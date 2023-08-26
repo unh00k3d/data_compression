@@ -31,6 +31,7 @@ def main():
 
         # to store the best run length so far
         best_run_so_far = 0
+        
         # to store the index of the best entry so far
         best_index_so_far = None
         for index in get_first_letter_matching_indexes(entry,message[i]):
