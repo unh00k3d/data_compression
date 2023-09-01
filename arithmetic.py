@@ -1,6 +1,7 @@
 # https://www.youtube.com/playlist?list=PLE125425EC837021F
 # https://www.youtube.com/watch?v=BQxerK9-Rbs&list=PLiqLGdpbmTW0vTp-V-5Rr9c3KzCvCg4HQ&index=21
 # https://www.youtube.com/watch?v=4yYgRAHtDLk
+# https://en.wikipedia.org/wiki/Arithmetic_coding
 
 # this is probably the most sophisticated coding algorithm since it requires a little bit more thinking also we have to make sure that we don't mess up the floating point percision
 # because machines are nutoriously bad at floating point numbers and being precise so we have to make sure the put that into consideration while we
