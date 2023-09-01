@@ -14,3 +14,17 @@ https://www.youtube.com/playlist?list=PLiqLGdpbmTW0vTp-V-5Rr9c3KzCvCg4HQ
 #### great especially for information theory fundamentals , huffman coding and arithmetic coding (a little too mathy)
 
 https://www.youtube.com/playlist?list=PLE125425EC837021F
+
+
+#### this video is the whole inspiration for my interest in data compression
+
+https://www.youtube.com/watch?v=B3y0RsVCyrw
+
+
+#### this video allowed me to grasp the concept of entropy more clearly
+
+https://www.youtube.com/watch?v=M5c_RFKVkko
+
+#### this video is also useful to understand different ways to approach compression techniques and problems
+
+https://www.youtube.com/watch?v=EFUYNoFRHQI
