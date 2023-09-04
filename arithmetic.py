@@ -134,7 +134,7 @@ def main():
     print(f"x: {x}")
     print(f"r: {r}")
     # 32 is the percision of the binary representation
-    print(f"code to be transmitted : {fraction_to_binary(r,32)}")
+    print(f"code to be transmitted : {fraction_to_binary(r,t)}")
 
 
 
